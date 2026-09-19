@@ -5,8 +5,14 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CapaClosureGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         List<String> gaps = new ArrayList<>();
         if (!request.rootCauseApproved()) gaps.add("根因分析尚未批准");
@@ -20,15 +26,24 @@ public class CapaClosureGovernanceService {
         int readiness = Math.max(0, 100 - gaps.size() * 18);
         return new Result(request.capaId(), decision, readiness, List.copyOf(gaps), gaps.isEmpty());
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String capaId, boolean rootCauseApproved,
                           boolean actionsCompleted, boolean evidenceComplete,
                           boolean effectivenessCheckPassed, @Min(0) int overdueActions,
                           boolean recurrenceDetected) {
+        /**
+         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+         */
         public Request {
             if (capaId == null || capaId.isBlank()) throw new IllegalArgumentException("capaId is required");
             if (overdueActions < 0) throw new IllegalArgumentException("overdueActions must be non-negative");
         }
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String capaId, String decision, int closureReadiness,
                          List<String> gaps, boolean closureAllowed) {}
 }

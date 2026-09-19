@@ -2,21 +2,51 @@
 package cn.zhuatech.inspection.domain;
 import org.springframework.stereotype.Component;
 import java.util.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Component
 public class DomainCatalog {
     private final Map<String, WorkflowAction> actions = new LinkedHashMap<>();
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public DomainCatalog() {
         actions.put("SUBMIT", new WorkflowAction("SUBMIT", "提交巡检结果", List.of("草稿"), "待复核", "OPERATOR"));
         actions.put("VERIFY", new WorkflowAction("VERIFY", "完成问题复核", List.of("待复核"), "整改中", "ADMIN"));
         actions.put("CLOSE", new WorkflowAction("CLOSE", "确认整改销项", List.of("整改中"), "已关闭", "ADMIN"));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String systemName() { return "知华科技企业移动巡检与隐患整改系统"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String scene() { return "巡检标准、区域点位、计划、任务、移动执行、异常隐患、整改、复核、统计与审计"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String initialStatus() { return "草稿"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String partyLabel() { return "区域/点位/责任部门"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String amountLabel() { return "风险损失"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String quantityLabel() { return "巡检点数量"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String dueLabel() { return "整改期限"; }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<ModuleDefinition> modules() { return List.of(
             new ModuleDefinition("STANDARD", "巡检标准", "维护检查项、方法、阈值、照片要求和判定规则"),
             new ModuleDefinition("LOCATION", "区域与点位", "管理园区、区域、设备、二维码和责任归属"),
@@ -28,7 +58,16 @@ public class DomainCatalog {
             new ModuleDefinition("VERIFICATION", "复核销项", "执行独立复核、退回、关闭和复发跟踪"),
             new ModuleDefinition("ANALYTICS", "巡检分析", "分析完成率、漏检率、隐患趋势和整改时效")
         ); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Map<String, WorkflowAction> actions() { return Collections.unmodifiableMap(actions); }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record ModuleDefinition(String code,String name,String description) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record WorkflowAction(String code,String label,List<String> from,String to,String requiredRole) {}
 }
