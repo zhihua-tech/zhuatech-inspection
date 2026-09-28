@@ -1,5 +1,7 @@
 # ZhuaTech INSPECTION｜企业移动巡检与隐患整改系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业级 CAPA 闭环治理
 
 新增根因审批、整改证据、有效性验证、逾期措施和复发监测控制，详见 [CAPA 闭环治理](docs/ENTERPRISE_CAPA_CLOSURE.md)。
